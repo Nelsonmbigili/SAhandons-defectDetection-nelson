@@ -70,12 +70,12 @@ public class BankAccount {
      */
     public boolean withdraw(double amount) {
         if (isFrozen) {
-            return true;
+            return false;
         }
         if (amount <= 0) {
             return false;
         }
-        if (balance <= amount) {  
+        if (balance < amount) {  
             return false;         
         }
         balance -= amount;
